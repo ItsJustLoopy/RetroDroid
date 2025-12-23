@@ -6,8 +6,13 @@ plugins {
 
 android {
     namespace = "com.loopy.retrodroidapp"
-    compileSdk {
-        version = release(36)
+    compileSdk = 36
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
     }
 
     defaultConfig {
@@ -18,21 +23,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        externalNativeBuild {
-            cmake {
-                cppFlags; ""
-            }
-        }
-
-        externalNativeBuild {
-            cmake {
-                path; "src/main/cpp/CMakeLists.txt"
-            }
-        }
     }
-
-
 
     buildTypes {
         release {
@@ -52,6 +43,12 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
     }
 }
 

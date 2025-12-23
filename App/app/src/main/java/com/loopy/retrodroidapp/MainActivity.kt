@@ -13,7 +13,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.loopy.retrodroidapp.ui.theme.RetrodroidappTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity()
+{
+
+    companion object //loads the native library
+    {
+        init {
+            System.loadLibrary("retrodroid_native") //compiled shared library
+        }
+    }
+
+    external fun NativeLogHello()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +37,7 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+            NativeLogHello()
         }
     }
 }
