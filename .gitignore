@@ -4,6 +4,8 @@ build/
 
 # Local configuration file (sdk path, etc)
 local.properties
+key.properties
+keystore.properties
 
 # Log/OS Files
 *.log
@@ -32,3 +34,29 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Android / Gradle
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+
+# IntelliJ/Android Studio
+*.ipr
+*.iws
+
+# NDK/CMake
+obj/
+*.so
+*.o
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.swp
+
