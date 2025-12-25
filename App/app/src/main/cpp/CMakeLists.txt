@@ -5,7 +5,7 @@ project(retrodroid_native)
 add_library(
         retrodroid_native
         SHARED
-        JNI/jni_bridge.cpp
+        ../JNI/jni_bridge.cpp
         Core/emulator_host.cpp
 )
 

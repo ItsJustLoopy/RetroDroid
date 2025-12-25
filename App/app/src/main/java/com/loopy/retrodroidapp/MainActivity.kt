@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity()
         }
     }
 
-    external fun NativeLogHello()
+    external fun nativeLog(message: String)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity()
                     )
                 }
             }
-            NativeLogHello()
+            nativeLog("Hello from native code!")
         }
     }
 }
